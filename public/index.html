@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Catalogo de produtos</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="loading">
+			<div class="spinner"></div>
+		</div>
+		<div class="mensagem">
+			<span class="msg"> Nenhum produto cadastrado... </span>
+		</div>
+		<div class="header">
+			<h1>Catalogo de Produtos</h1>
+		</div>
+		<div class="items">
+			<div class="input-icon">
+				<img src="img/search.png" alt="">
+				<input type="text" class="search" id="search" placeholder="Nome do produto..."
+					onkeypress="handleKeyPress(event)">
+			</div>
+			<button class="btn-search" onclick="searchProduto()"> SEARCH </button>
+			<button class="btn-criar adm" onclick="abrirModalCriar()"> CRIAR PRODUTO </button>
+			<button class="btn-criar" onclick="abrirModalLogin()" id="btn-account"> ENTRAR COMO ADMIN </button>
+			<button class="btn-criar" onclick="logout()" id="btn-logout"
+				style="display: none; background-color: rgb(255, 0, 0); width: 15%;"> LOGOUT </button>
+		</div>
+		<span class="resultado"></span>
+		<div class="produtos">
+		</div>
+		<div class="modal">
+			<div class="modal-content">
+				<input type="text" id="name" placeholder="Nome" class="modal-input">
+				<input type="text" id="desc" placeholder="Descrição" class="modal-input">
+				<input type="text" id="price" placeholder="Preço" class="modal-input">
+				<input type="hidden" id="id" value="">
+				<div class="row">
+					<button onclick="updateProduto()" class="btn-edit"> ATUALIZAR </button>
+					<button onclick="fecharModal()" class="btn-del"> FECHAR </button>
+				</div>
+			</div>
+		</div>
+		<div class="modal-criar">
+			<div class="modal-content">
+				<input type="text" id="nameCriar" placeholder="Nome" class="modal-input">
+				<input type="text" id="descCriar" placeholder="Descrição" class="modal-input">
+				<input type="text" id="priceCriar" placeholder="Preço" class="modal-input">
+				<div class="row">
+					<button onclick="criarProduto()" class="btn-edit"> CRIAR </button>
+					<button onclick="fecharModal()" class="btn-del"> FECHAR </button>
+				</div>
+			</div>
+		</div>
+		<div class="modal-login">
+			<div class="modal-content">
+				<p style="font-weight: bold; font-size: 130%;"> Login </p>
+				<input type="text" id="username" placeholder="Username" class="modal-input">
+				<input type="text" id="password" placeholder="Password" class="modal-input">
+				<div class="row">
+					<button onclick="login()" class="btn-edit"> LOGAR </button>
+					<button onclick="fecharModal()" class="btn-del"> FECHAR </button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+	<script>
+		exibirProdutos().then(() => accessRoutesPrivates())
+	</script>
+</body>
+
+</html>

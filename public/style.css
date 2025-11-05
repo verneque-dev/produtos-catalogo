@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "arial";
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height: 15vh;
+    width: 100%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.produtos {
+    display: flex;
+    height: auto;
+    width: 85%;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-block: 5%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 30vh;
+    width: 35%;
+    align-items: center;
+    max-height: auto;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(17, 12, 46, 0.25) 0px 48px 100px 0px;
+}
+
+.row {
+    display: flex;
+    margin-top: auto;
+    gap: 10%;
+    width: 100%;
+    height: 5vh;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.btn-edit {
+    background-color: rgb(44, 44, 255);
+    border: 0;
+    color: white;
+    font-weight: bolder;
+    height: 100%;
+    width: 35%;
+    border-radius: 5px;
+}
+
+.btn-del {
+    background-color: rgb(255, 0, 0);
+    border: 0;
+    color: white;
+    font-weight: bolder;
+    height: 100%;
+    width: 35%;
+    border-radius: 5px;
+}
+
+.desc-card {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+}
+
+.name-card {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-align: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    display: flex;
+    background-color: white;
+    height: 50%;
+    width: 35%;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    padding: 3%;
+    gap: 4%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-criar {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-login {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.modal-input {
+    height: 6vh;
+    width: 82%;
+    padding-inline: 4%;
+}
+
+.items {
+    display: flex;
+    height: 5vh;
+    width: 80%;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.search {
+    padding-left: 1%;
+    height: 100%;
+    border: 0;
+    width: 92%;
+    outline: none;
+}
+
+.input-icon {
+    border: gray solid 1px;
+    width: 35%;
+    display: flex;
+    padding-left: 10px;
+}
+
+.input-icon img {
+    height: auto;
+    width: 8%;
+}
+
+.btn-search {
+    background-color: rgb(117, 117, 117);
+    border: 0;
+    color: white;
+    font-weight: bolder;
+    height: 100%;
+    width: 10%;
+    border: 1px rgb(117, 117, 117) solid;
+}
+
+.btn-criar {
+    background-color: rgb(44, 44, 255);
+    border: 0;
+    color: white;
+    font-weight: bolder;
+    height: 100%;
+    width: 20%;
+    margin-left: 10px;
+}
+
+.resultado {
+    text-align: center;
+    margin-top: 3%;
+    font-weight: bold;
+    font-size: 120%;
+    display: none;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 85vh;
+    width: 100%;
+    margin-top: 15vh;
+}
+
+.loading span {
+    font-weight: bold;
+}
+
+.adm, .row-adm {
+    display: none;
+}
+
+.spinner {
+  border: 5px solid #f3f3f3; /* cor de fundo */
+  border-top: 5px solid #555; /* cor do spinner */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mensagem {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+}
