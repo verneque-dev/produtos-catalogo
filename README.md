@@ -38,17 +38,25 @@ dotenv
 
 Railway (deploy)
 
+```
 📁 Estrutura de Pastas
+
 src/
   db/
   controllers/
   models/
   routes/
+  middleware
   app.js
-  middleware.js
-public/          # front-end estático
+
+public/
+  index.html
+  styles.css
+  script.js
+
 .env.example
 package.json
+```
 
 🔐 Autenticação
 
