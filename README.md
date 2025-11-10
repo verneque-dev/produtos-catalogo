@@ -4,12 +4,6 @@ Um sistema de catálogo de produtos com CRUD completo, painel administrativo sim
 O back-end foi construído em Node.js + Express usando padrão MVC, integrado a um banco MySQL.
 O front-end é estático e servido pela própria API.
 
-📸 Screenshot da Home
-
-(adicione sua imagem aqui)
-
-![Home](./screens/home.png)
-
 ✅ Funcionalidades
 
 Listar produtos
@@ -52,8 +46,7 @@ src/
   routes/
   app.js
   middleware.js
-
-public/              # front-end estático
+public/          # front-end estático
 .env.example
 package.json
 
@@ -68,30 +61,28 @@ Authorization: Bearer <token_aqui>
 🗄️ Banco de Dados
 
 O sistema usa MySQL.
-Segue o script mínimo para criar a tabela principal:
+Segue o script mínimo para criar as tabelas do projeto:
 
 CREATE TABLE tb_produtos (
-  tb_produtos_id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	tb_produtos_id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
   tb_produtos_nome VARCHAR(50) NOT NULL,
-  tb_produtos_desc VARCHAR(200),
+	tb_produtos_desc VARCHAR(200),
   tb_produtos_valor DECIMAL(10,2) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-
 Obs:
-O username e password do admin estão nas variáveis de ambiente.
-Eles devem ser definidos no .env.
+O username e password do admin estão nas variaveis ambientes portanto devem ser definidos no .env.
 
-▶️ Como Rodar Localmente
+▶️ Como rodar localmente
 
 Clone o repositório:
 
 git clone https://github.com/verneque-dev/produtos-catalogo.git
 
 
-Instale as dependências:
+Instale dependências:
 
 npm install
 
@@ -103,13 +94,14 @@ Inicie o servidor:
 npm start
 
 
-A API roda na porta definida no .env.
+Por padrão, roda na porta definida no .env.
 
 🚀 Deploy
 
 O projeto está hospedado no Railway:
 
-🔗 https://produtos-catalogo.up.railway.app/
+https://produtos-catalogo.up.railway.app/
+
 
 📌 Rotas Principais
 Produtos
@@ -121,6 +113,7 @@ POST /produtos criar
 PUT /produtos/:id editar
 
 DELETE /produtos/:id excluir
+
 (As rotas POST/PUT/DELETE exigem JWT.)
 
 Login
