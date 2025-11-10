@@ -4,15 +4,22 @@ Um sistema de catálogo de produtos com CRUD completo, painel administrativo sim
 O back-end foi construído em Node.js + Express usando padrão MVC, integrado a um banco MySQL.
 O front-end é estático e servido pela própria API.
 
+📸 Screenshot da Home (Admin)
+
+<img width="1365" height="634" alt="image" src="https://github.com/user-attachments/assets/7e1d7e99-fb5e-4188-a2cc-9eb2591bfe3d" />
+
+
 ✅ Funcionalidades
 
 Listar produtos
 
-Criar produtos
+Buscar produtos
 
-Editar produtos
+Criar produtos (admin)
 
-Excluir produtos
+Editar produtos (admin)
+
+Excluir produtos (admin)
 
 Login exclusivo de administrador
 
