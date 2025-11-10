@@ -71,14 +71,16 @@ Authorization: Bearer <token_aqui>
 O sistema usa MySQL.
 Segue o script mínimo para criar as tabelas do projeto:
 
+```sql
 CREATE TABLE tb_produtos (
-	tb_produtos_id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  tb_produtos_id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
   tb_produtos_nome VARCHAR(50) NOT NULL,
-	tb_produtos_desc VARCHAR(200),
+  tb_produtos_desc VARCHAR(200),
   tb_produtos_valor DECIMAL(10,2) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+```
 
 Obs:
 O username e password do admin estão nas variaveis ambientes portanto devem ser definidos no .env.
