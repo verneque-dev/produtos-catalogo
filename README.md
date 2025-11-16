@@ -1,84 +1,54 @@
-Catálogo de Produtos
+# Catalogo de Produtos
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) 
+
+# Sobre o projeto
+
+https://produtos-catalogo.up.railway.app/
 
 Um sistema de catálogo de produtos com CRUD completo, painel administrativo simples e autenticação via JWT para acesso às rotas privadas.
 O back-end foi construído em Node.js + Express usando padrão MVC, integrado a um banco MySQL.
 O front-end é estático e servido pela própria API.
 
-📸 Screenshot da Home (Admin)
-
+## Layout web
 <img width="1365" height="634" alt="image" src="https://github.com/user-attachments/assets/7e1d7e99-fb5e-4188-a2cc-9eb2591bfe3d" />
 
+# Tecnologias utilizadas
+## Back end
+- Node.js
+- Express
+- JWT
 
-✅ Funcionalidades
+## Front end
+- HTML / CSS / JS
+  
+## Implantação em produção
+- Back end + Front end: Railway
+- Banco de dados: MySQL
 
-Listar produtos
+# Como executar o projeto
 
-Buscar produtos
+## Back end + Front end
 
-Criar produtos (admin)
+```bash
+# clonar repositório
+git clone https://github.com/verneque-dev/produtos-catalogo
 
-Editar produtos (admin)
+# instalar dependências
+npm install
 
-Excluir produtos (admin)
+# configure o .env usando o .env.example como base
 
-Login exclusivo de administrador
+# iniciar o servidor
+npm start
 
-Geração e validação de JWT
-
-Rotas protegidas por middleware
-
-Front-end estático integrado
-
-Deploy completo no Railway
-
-🏗️ Tecnologias Utilizadas
-
-Node.js
-
-Express
-
-MySQL
-
-JWT (jsonwebtoken)
-
-dotenv
-
-Railway (deploy)
-
-```
-📁 Estrutura de Pastas
-
-src/
-  db/
-  controllers/
-  models/
-  routes/
-  middleware
-  app.js
-
-public/
-  index.html
-  styles.css
-  script.js
-
-.env.example
-package.json
+# por padrão, roda na porta definida no .env
 ```
 
-🔐 Autenticação
-
-Após o login do administrador, um token JWT é retornado.
-
-Para acessar rotas protegidas, envie no header:
-
-Authorization: Bearer <token_aqui>
-
-🗄️ Banco de Dados
-
-O sistema usa MySQL.
-Segue o script mínimo para criar as tabelas do projeto:
+## O sistema usa MySQL - script para criação do Banco localmente
 
 ```sql
+CREATE DATABASE db_catalogo_produtos;
+USE db_catalogo_produtos;
 CREATE TABLE tb_produtos (
   tb_produtos_id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
   tb_produtos_nome VARCHAR(50) NOT NULL,
@@ -90,61 +60,23 @@ CREATE TABLE tb_produtos (
 ```
 
 Obs:
-O username e password do admin estão nas variaveis ambientes portanto devem ser definidos no .env.
+O username e password do admin estão nas variaveis ambientes portanto devem ser definidos no .env
 
-▶️ Como rodar localmente
+# Rotas Principais
 
-Clone o repositório:
-
-git clone https://github.com/verneque-dev/produtos-catalogo.git
-
-
-Instale dependências:
-
-npm install
-
-
-Configure o .env usando o .env.example como base.
-
-Inicie o servidor:
-
-npm start
-
-
-Por padrão, roda na porta definida no .env.
-
-🚀 Deploy
-
-O projeto está hospedado no Railway:
-
-https://produtos-catalogo.up.railway.app/
-
-
-📌 Rotas Principais
-Produtos
-
-GET /produtos listar
-
-POST /produtos criar
-
-PUT /produtos/:id editar
-
-DELETE /produtos/:id excluir
+## Produtos
+- GET /produtos listar
+- POST /produtos criar
+- PUT /produtos/:id editar
+- DELETE /produtos/:id excluir
 
 (As rotas POST/PUT/DELETE exigem JWT.)
 
-Login
+## Login
+ - POST /login (retorna token JWT)
 
-POST /login retorna token JWT
+# Autor
 
-🎯 Próximas Evoluções
+Vitor Henrique Verneque Silva
 
-Paginação
-
-Upload real de imagens
-
-Painel administrativo mais completo
-
-Relações mais complexas (categorias, usuários, estoque real)
-
-Testes automatizados
+https://www.linkedin.com/in/vitor-verneque
